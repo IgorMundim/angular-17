@@ -1,0 +1,66 @@
+:host {
+  .cartItemContainer{
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+
+  p {
+    color: #222222;
+  }
+  svg {
+    color: #222222;
+  }
+  }
+
+
+  .cartItemImage {
+    background-image:  url("https://thaisslaski.com.br/wp-content/uploads/2019/04/Monumento-Imigra%C3%A7%C3%A3o-Japonesa.jpg");
+    height: 250px;
+    width: 170px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    border-radius: 10px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  .cartItemInfo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    flex: 1;
+
+    p {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+  }
+
+  .cartItemQuantity{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+
+    p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    img {
+      size: 20px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .removeButton{
+    margin-right: 20px;
+    &:hover {
+      cursor: pointer;
+    }
+    img {
+      width: 25px;
+    }
+  }
+}

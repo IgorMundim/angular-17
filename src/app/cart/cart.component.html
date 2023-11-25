@@ -1,0 +1,8 @@
+<div [ngClass]="{'openCart': openCart, 'closeCart': !openCart }" >
+  <div class="cartEscapeArea" (click)="handleEscapeAreaClick()"></div>
+    <div class="cartContent">
+      <p class="cartTitle">Seu Carrinho</p>
+      <app-cart-item></app-cart-item>
+      <p class="cartTotal">Total: {{cartDetails.total}}</p>
+    </div>
+</div>

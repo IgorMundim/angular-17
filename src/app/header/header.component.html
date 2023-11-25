@@ -1,0 +1,9 @@
+<header>
+  <div class="logo">Shopping</div>
+  <div class="button">
+    <div>Hello</div>
+    <div (click)="openCart()" *ngIf="cartDetails.countItems > 0;">Cart ({{cartDetails.countItems}})</div>
+    <div (click)="openCart()" *ngIf="cartDetails.countItems === 0;">Cart</div>
+    <app-cart [openCart]="cartIsOpen" (close)="closeCart()"></app-cart>
+  </div>
+</header>
