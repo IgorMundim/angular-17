@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartComponent } from '../cart/cart.component';
+import { ICart } from '../store/cart.reducer';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { selectCount } from '../store/cart.selectors';
 
 @Component({
   selector: 'app-header',
@@ -11,13 +15,13 @@ import { CartComponent } from '../cart/cart.component';
 })
 export class HeaderComponent {
   public cartIsOpen: boolean = false;
-  public cartDetails = { total: 0, countItems: 0 };
+  public cartItem$: Observable<number>;
 
-  constructor(){}
-
-  ngOnInit(): void {
+  constructor(private cartStore: Store<{cart: ICart}>){
+    this.cartItem$ = cartStore.select(selectCount)
 
   }
+
   openCart(){
     this.cartIsOpen = true;
   }

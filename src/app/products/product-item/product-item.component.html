@@ -1,1 +1,19 @@
-<p>product-item works!</p>
+<div class="container">
+  <div class="image"  [ngStyle]="{'background-image': 'url('+product.imageUrl+')'}">
+
+    <div class="customButton" (click)="handleProductClick()">
+      <button class="customButtonContainer">
+        <div class="icon">
+          <img src="assets/icons/shoppingCart.svg" alt=" Adicionar ao carrinho">
+        </div>
+        Adicionar ao carrinho
+      </button>
+    </div>
+
+  </div>
+  <div class="info">
+    <p>{{product.name}}</p>
+    <p>{{product.price}}</p>
+  </div>
+
+</div>

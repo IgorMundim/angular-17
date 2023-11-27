@@ -1,6 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartItemComponent } from './cart-item/cart-item.component';
+import { Store } from '@ngrx/store';
+import { ICart } from '../store/cart.reducer';
+import { selectTotal } from '../store/cart.selectors';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -13,10 +17,9 @@ export class CartComponent {
   @Input() public openCart: boolean  = true;
   @Output('close') closeCart = new EventEmitter<boolean>();
   cartDetails = {total: 0, countItems: 0 };
-  constructor(){}
-
-  ngOnInit(): void {
-
+  public cartTotal$: Observable<number>;
+  constructor(private cartStore: Store<{cart: ICart}>){
+    this.cartTotal$ = cartStore.select(selectTotal)
   }
 
   handleEscapeAreaClick(){
