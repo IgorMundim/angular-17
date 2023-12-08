@@ -1,5 +1,5 @@
-<!-- <div class="container">
-  <div *ngFor="let product of products;" >
+<div class="container">
+  <div *ngFor="let product of products$ | async;" >
     <app-product-item [item]="product"></app-product-item>
   </div>
-</div> -->
+</div>

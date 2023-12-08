@@ -1,19 +1,19 @@
-<div class="cartItemContainer" *ngFor="let cartItem of cartItems; index as i">
-  <div class="cartItemImage"[ngStyle]="{'background-image': 'url('+cartItem.imageUrl+')'}"></div>
+<div class="cartItemContainer"  *ngFor="let cartItem of cartItem$ | async; index as i;">
+    <div class="cartItemImage"[ngStyle]="{'background-image': 'url('+cartItem.imageUrl+')'}"></div>
 
-  <div  class="cartItemInfo">
-    <p>{{cartItem.name}}</p>
-    <p>R$ {{cartItem.price}}</p>
+    <div  class="cartItemInfo">
+      <p>{{cartItem.name}}+</p>
+      <p>R$ {{cartItem.price}}</p>
 
-    <div class="cartItemQuantity">
-      <img src="assets/icons/decrease.svg" alt="Diminuir" (click)="handleDecreaseClick(cartItem, i)">
-      <p>{{cartItem.quantity}}</p>
-      <img src="assets/icons/increase.svg" alt="Almentar" (click)="handleIncreaseClick(cartItem)">
+      <div class="cartItemQuantity">
+        <img src="assets/icons/decrease.svg" alt="Diminuir" (click)="handleDecreaseClick(cartItem, i)">
+        <p>{{cartItem.quantity}}</p>
+        <img src="assets/icons/increase.svg" alt="Almentar" (click)="handleIncreaseClick(cartItem)">
+      </div>
+
     </div>
 
+    <div class="removeButton" >
+      <img src="assets/icons/remove.svg" alt="Remover" (click)="handleRemoveClick(cartItem)">
+    </div>
   </div>
-
-  <div class="removeButton" >
-    <img src="assets/icons/remove.svg" alt="Remover" (click)="handleRemoveClick(i)">
-  </div>
-</div>
